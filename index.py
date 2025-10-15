@@ -15,7 +15,6 @@ df.set_index('Date', inplace=True)
 # Pilih salah satu kolom, misalnya AMZN
 series = df['AMZN']
 
-# ======================
 # Cari parameter ARIMA terbaik
 # ======================
 model = pm.auto_arima(series, seasonal=False, stepwise=True, suppress_warnings=True)
@@ -31,9 +30,8 @@ steps = len(future_dates)
 forecast = model.predict(n_periods=steps)
 forecast_index = future_dates
 
-# ======================
 # Plot grafik
-# ======================
+
 plt.figure(figsize=(14,7))
 
 # Data aktual
